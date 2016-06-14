@@ -1,4 +1,4 @@
-FROM sameersbn/ubuntu:14.04.20160608
+FROM sameersbn/ubuntu:14.04.20160504
 MAINTAINER sameer@damagehead.com
 
 ENV REDMINE_VERSION=3.2.3 \
@@ -43,5 +43,6 @@ EXPOSE 80/tcp 443/tcp
 
 VOLUME ["${REDMINE_DATA_DIR}", "${REDMINE_LOG_DIR}"]
 WORKDIR ${REDMINE_INSTALL_DIR}
+USER 500
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 CMD ["app:start"]
