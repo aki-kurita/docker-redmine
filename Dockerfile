@@ -43,6 +43,5 @@ EXPOSE 80/tcp 443/tcp
 
 VOLUME ["${REDMINE_DATA_DIR}", "${REDMINE_LOG_DIR}"]
 WORKDIR ${REDMINE_INSTALL_DIR}
-USER 0
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 CMD ["app:start"]
